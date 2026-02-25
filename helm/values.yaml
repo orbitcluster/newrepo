@@ -1,0 +1,19 @@
+# Default values for oc-python-template.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Empty by default, use envs/<env>/values.yaml for specific configurations.
+
+global:
+  applicationName: newrepo
+
+k8s-service:
+  applicationName: newrepo
+  containerImage:
+    # Organizational mapping prefixes. The repository name is dynamically
+    # injected by ArgoCD ApplicationSets (passing the github repo name)
+    registry: 485646919618.dkr.ecr.us-east-1.amazonaws.com
+    orgId: "104"
+    buId: "1002"
+    appId: "1"
+    repository: ""

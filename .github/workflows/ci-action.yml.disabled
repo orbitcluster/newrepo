@@ -1,0 +1,30 @@
+name: app-action-ci
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+  issues: write
+  pull-requests: write
+  id-token: write
+  packages: write
+  security-events: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: orbitcluster/oc-cicd-python-workflow@v1
+        with:
+          test-directory: "test"
+          app-name: "${{ github.event.repository.name }}" # Use consistent name
+          appid: "1"
+          orgid: "103"
+          buid: "1002"
+          role-to-assume: ${{ secrets.OC_ROLE_TO_ASSUME }}
