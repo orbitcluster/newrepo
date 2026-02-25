@@ -12,7 +12,7 @@
 
 k8s-service:
   containerImage:
-    tag: "v1.0.0-feat-newbranch-4a0ba7f"
+    tag: "v1.0.0-feat-newbranch-4fcaf7a"
     pullPolicy: Always
 
   imagePullSecrets:
